@@ -1,0 +1,71 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  color: aliceblue;
+}
+
+body {
+  background-color: #363636;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+  width: 100vw;
+}
+.poll {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90vh;
+  width: 90vw;
+}
+.right {
+  padding: 50px 90px;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  width: 600px;
+  height: 600px;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #313131, #3a3a3a);
+  box-shadow: 20px 20px 60px #2e2e2e, -20px -20px 60px #3e3e3e;
+}
+.left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 600px;
+  height: 600px;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #313131, #3a3a3a);
+  box-shadow: 20px 20px 60px #2e2e2e, -20px -20px 60px #3e3e3e;
+}
+.left canvas {
+  color: red;
+}
+.graph {
+  width: 500px;
+  height: 500px;
+}
+button {
+  font-size: 17px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  background-color: #eeeeee;
+  display: inline-block;
+  height: 50px;
+  width: 230px;
+  color: #3e3e3e;
+  margin: 2px;
+}
+button:hover {
+  background-color: #888888;
+  color: rgb(255, 255, 255);
+}
+
+#options input {
+  margin: 20px;
+  background-color: red;
+}

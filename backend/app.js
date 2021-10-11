@@ -9,12 +9,27 @@ app.get('/', (req, res) => {
   res.end('realtime colors app');
 });
 
-io.on('connection', socket => {
-  console.log('--->Client connected');
+const votes = {
+  malatya: 0,
+  istanbul: 0,
+  izmir: 0,
+  ankara: 0,
+};
 
-  socket.on('disconnect', () => console.log('Client disconnected'));
+io.on('connection', socket => {
+  console.log('------->Client connected');
+
+  socket.emit('new-vote', votes);
+
+  socket.on('new-vote', vote => {
+    console.log('New Vote:', vote);
+    votes[vote] += 1;
+    io.emit('new-vote', votes);
+  });
+
+  socket.on('disconnect', () => console.log('------>Client disconnected'));
 });
 
-server.listen(3000, () => {
-  console.log('listening on *:3000');
+server.listen(process.env.PORT || 4444, () => {
+  console.log('listening on *:4444');
 });
